@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import requireAuth from "./requireAuth";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 class CommentBox extends Component {
@@ -10,7 +11,7 @@ class CommentBox extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  // Our component jst got rendered 
   handleChange(e) {
     this.setState({ comment: e.target.value });
   }
@@ -40,4 +41,6 @@ class CommentBox extends Component {
   }
 }
 
-export default connect(null, actions)(CommentBox);
+
+
+export default requireAuth(connect(null , actions)(CommentBox));
