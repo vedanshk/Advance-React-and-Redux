@@ -12,9 +12,9 @@ afterEach(() => {
 describe("the textarea ", () => {
 
 
-  it("it has textarea and button ", () => {
+  it("it has a textarea and  two button ", () => {
     expect(wrapped.find("textarea").length).toEqual(1);
-    expect(wrapped.find("button").length).toEqual(1);
+    expect(wrapped.find("button").length).toEqual(2);
   });
 });
 
@@ -24,7 +24,7 @@ describe("the form", () => {
       target: {
         value: "new comment",
       },
-      
+
     });
     wrapped.update();
   });
